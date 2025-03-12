@@ -80,7 +80,7 @@ public class TicketController {
 
 //    Update a Ticket by ID
     @PutMapping("/{ticket-id}")
-    public ResponseEntity<ApiResponse<Ticket>> updateById(@PathVariable("ticket-id") int id,@RequestBody TicketRequest ticketRequest){
+    public ResponseEntity<ApiResponse<?>> updateById(@PathVariable("ticket-id") int id,@RequestBody TicketRequest ticketRequest){
         for (Ticket ticket : tickets){
             if (ticket.getTicketId() == id){
                 ApiResponse response = new ApiResponse(true,"Ticket updated successfully.",HttpStatus.OK,ticket,LocalDateTime.now());
@@ -100,15 +100,17 @@ public class TicketController {
     }
 
 //    Delete a Ticket by ID
-//    @DeleteMapping("/{ticket-id}")
-//    public ResponseEntity<ApiResponse<?>> deleteById(@PathVariable("ticket-id") int id){
-//        for (Ticket ticket : tickets){
-//            if (ticket.getTicketId() == id){
-//                tickets.remove(ticket);
-//                ResponseEntity<ApiResponse<?>> response = new ResponseEntity<ApiResponse<?>>(true,"Ticket deleted successfully.",LocalDateTime.now(), HttpStatus.OK,t );
-//            }
-//        }
-//    }
+    @DeleteMapping("/{ticket-id}")
+    public ResponseEntity<ApiResponse<?>> deleteById(@PathVariable("ticket-id") int id){
+        for (Ticket ticket : tickets){
+            if (ticket.getTicketId() == id){
+                tickets.remove(ticket);
+               ApiResponse<?> response = new ApiResponse<>(true,"Ticket Deleted Successfully.",HttpStatus.OK,LocalDateTime.now());
+               return ResponseEntity.ok(response);
+            }
+        }
+        return null;
+    }
 
 
 

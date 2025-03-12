@@ -33,6 +33,12 @@ public class ApiResponse <T>{
         this.status = status;
         this.timestamp = timestamp;
     }
+    public ApiResponse(boolean success, String messenger, HttpStatus status,LocalDateTime timestamp){
+        this.success = success;
+        this.messenger = messenger;
+        this.status = status;
+        this.timestamp = timestamp;
+    }
     public ApiResponse(boolean success, String messenger){
         this.success = success;
         this.messenger = messenger;
