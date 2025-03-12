@@ -35,19 +35,21 @@ public class TicketController {
 
     //Retrieve a Ticket by ID (using @PathVariable)
     @GetMapping("/{ticket-id}")
-    public ResponseEntity<?> getTicketById(@PathVariable("ticket-id") int ticketId){
-        boolean isFound = false;
+    public ResponseEntity<ApiResponse<Ticket>> getTicketById(@PathVariable("ticket-id") int ticketId){
+//        boolean isFound = false;
         for(Ticket ticket : tickets){
             if (ticket.getTicketId() == ticketId){
-                isFound=true;
+//                isFound=true;
 //                return ticket;
+                ApiResponse<Ticket> response = new ApiResponse<>(true, "Ticket retrieved successfully.", LocalDateTime.now(),HttpStatus.OK,ticket);
+                return ResponseEntity.ok(response);
             }
         }
 
-        System.out.println(isFound);
-        if(!isFound){
-            return ResponseEntity.notFound().build();
-        }
+//        System.out.println(isFound);
+//        if(!isFound){
+//            return ResponseEntity.notFound().build();
+
         return null;
     }
 
