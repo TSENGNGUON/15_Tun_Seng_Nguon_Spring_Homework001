@@ -18,6 +18,7 @@ public class TicketController {
         tickets.add(new Ticket(2,"koko","2025", "PP","BMC", 15,true,Status.CANCELED,"C44"));
         tickets.add(new Ticket(3,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,"B12"));
         tickets.add(new Ticket(4,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
+        tickets.add(new Ticket(5,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
     }
 
 //    Create a Ticket
