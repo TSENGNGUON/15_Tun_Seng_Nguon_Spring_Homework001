@@ -14,11 +14,11 @@ public class TicketController {
     int id = 5;
 
     public TicketController(){
-        tickets.add(new Ticket(1,"nara","2025", "PP","BMC", 15,true,Status.BOOKED,"A12"));
-        tickets.add(new Ticket(2,"koko","2025", "PP","BMC", 15,true,Status.CANCELED,"C44"));
-        tickets.add(new Ticket(3,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,"B12"));
-        tickets.add(new Ticket(4,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
-        tickets.add(new Ticket(5,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
+        tickets.add(new Ticket(1,"nara","2025-03-20", "PP","BMC", 15,true,Status.BOOKED,"A12"));
+        tickets.add(new Ticket(2,"koko","2025-03-5", "PP","BMC", 15,true,Status.CANCELED,"C44"));
+        tickets.add(new Ticket(3,"bopha","2025-03-2", "PP","BMC", 15,true,Status.COMPLETED,"B12"));
+        tickets.add(new Ticket(4,"bopha","2025-03-2", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
+        tickets.add(new Ticket(5,"bopha","2025-04-9", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
     }
 
 //    Create a Ticket
@@ -72,7 +72,7 @@ public class TicketController {
         ArrayList<Ticket> newArrList = new ArrayList<>();
         ApiResponse<List<Ticket>> response = null;
         for (int i = 0; i < tickets.size(); i++){
-           if (tickets.get(i).getTicketStatus().equals(status) && tickets.get(i).getTravelDate().equals(travelDate)){
+           if (tickets.get(i).getTicketStatus().equals(status) && tickets.get(i).getTravelDate().equalsIgnoreCase(travelDate)){
                newArrList.add(tickets.get(i));
               response = new ApiResponse<>(true,"Tickets filter successfully.",HttpStatus.OK,newArrList,LocalDateTime.now());
            }
