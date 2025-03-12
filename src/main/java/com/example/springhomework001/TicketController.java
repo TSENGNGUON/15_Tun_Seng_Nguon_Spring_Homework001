@@ -15,9 +15,9 @@ public class TicketController {
 
     public TicketController(){
         tickets.add(new Ticket(1,"nara","2025-03-12", "PP","BMC", 15,true,Status.BOOKED,"A12"));
-        tickets.add(new Ticket(2,"koko","2025-03-22", "PP","BMC", 15,true,Status.CANCELED,"C44"));
+        tickets.add(new Ticket(2,"koko","2025-03-12", "PP","BMC", 15,true,Status.CANCELED,"C44"));
         tickets.add(new Ticket(3,"bopha","2025-03-22", "PP","BMC", 15,true,Status.COMPLETED,"B12"));
-        tickets.add(new Ticket(4,"bopha","2025-06-9", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
+        tickets.add(new Ticket(4,"bopha","2025-03-22", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
     }
 
 //    Create a Ticket
