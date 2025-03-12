@@ -13,5 +13,5 @@ public class Ticket {
     private double price;
     private boolean paymentStatus;
     private Status ticketStatus;
-    private int seatNumber;
+    private String seatNumber;
 }

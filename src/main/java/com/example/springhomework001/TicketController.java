@@ -14,10 +14,10 @@ public class TicketController {
     int id = 5;
 
     public TicketController(){
-        tickets.add(new Ticket(1,"nara","2025", "PP","BMC", 15,true,Status.BOOKED,15));
-        tickets.add(new Ticket(2,"koko","2025", "PP","BMC", 15,true,Status.CANCELED,15));
-        tickets.add(new Ticket(3,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,15));
-        tickets.add(new Ticket(4,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,15));
+        tickets.add(new Ticket(1,"nara","2025", "PP","BMC", 15,true,Status.BOOKED,"A12"));
+        tickets.add(new Ticket(2,"koko","2025", "PP","BMC", 15,true,Status.CANCELED,"C44"));
+        tickets.add(new Ticket(3,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,"B12"));
+        tickets.add(new Ticket(4,"bopha","2025", "PP","BMC", 15,true,Status.COMPLETED,"G14"));
     }
 
 //    Create a Ticket
